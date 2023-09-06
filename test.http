@@ -1,20 +1,21 @@
-POST http://localhost:3000/api/addPalet
+POST https://tsuberi.com/api/addPalet
 Content-Type: application/json
 
 {
+    "_id" : 1,
     "date": "2023-09-06",
     "farmer": "Tsuberi",
-    "variety": "Sheli",
-    "size": 21,
-    "cartonCount": 120,
-    "weight": 587
+    "variety": "Tomi",
+    "size": 18,
+    "cartonCount": 120
+    
 }
 ####
 
-POST http://localhost:3000/api/getPalet
+POST https://tsuberi.com//api/getPalet
 Content-Type: application/json
 
 {
-    "farmer": "Tsuberi",
-    "weighUnder": 700
+    "farmer": "Tsuberi"
+    
 }
