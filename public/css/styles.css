@@ -1,0 +1,23 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-image: url('../images/mango.jpg');
+    background-size: cover; /* Cover the viewport */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-attachment: fixed; /* Fix the background image */
+    height: 100vh; /* Full height of the viewport */
+    color: #fff; /* White text color for better contrast */
+}
+
+h1 {
+    color: #28a745; /* Bootstrap success color */
+}
+
+.container {
+    position: relative;
+    top:10px;
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black */
+    padding: 50px;
+    border-radius: 10px;
+
+}

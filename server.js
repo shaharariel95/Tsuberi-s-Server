@@ -12,8 +12,15 @@ const PORT = 3000;
 app.set('view engine', 'ejs');
 
 app.use(bodyParser.json());
+app.use(express.static('public'));
 
-app.use('/', MangoRoute);
+
+app.use('/api', MangoRoute);
+
+app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/public/index.html');
+});
+
 
 app.use((req, res, next) => {
     res.status(404).render('404');

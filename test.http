@@ -1,4 +1,4 @@
-POST http://localhost:3000/mango
+POST http://localhost:3000/api/addPalet
 Content-Type: application/json
 
 {
@@ -9,7 +9,12 @@ Content-Type: application/json
     "cartonCount": 120,
     "weight": 587
 }
+####
 
+POST http://localhost:3000/api/getPalet
+Content-Type: application/json
 
-###
-
+{
+    "farmer": "Tsuberi",
+    "weighUnder": 700
+}
