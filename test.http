@@ -1,0 +1,15 @@
+POST http://localhost:3000/mango
+Content-Type: application/json
+
+{
+    "date": "2023-09-06",
+    "farmer": "Tsuberi",
+    "variety": "Sheli",
+    "size": 21,
+    "cartonCount": 120,
+    "weight": 587
+}
+
+
+###
+

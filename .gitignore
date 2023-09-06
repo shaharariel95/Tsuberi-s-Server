@@ -1,2 +1,4 @@
 node_modules/
 package-lock.json
+.env
+tsuberis-mangos-firebase-adminsdk-63yrc-9ecf5dbe78.json
