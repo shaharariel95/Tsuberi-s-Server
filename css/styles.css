@@ -1,0 +1,201 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Times New Roman', Times, serif, sans-serif;
+    scroll-behavior: smooth;
+    background-color: #465e2d; /* Initial background color */
+    height: 100%;
+    scroll-snap-type: y mandatory; /* Enable snap scrolling on the Y axis */
+    /* overflow-y: auto; */
+    
+}
+
+#home, #about {
+    background-image: url("../images/bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+header {
+    background: linear-gradient(to left, #f7c068, #e89d2f); /* Subtle gradient from right to left */
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-link {
+    color: #fff; /* Default white text color */
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+    background-color: rgba(255, 255, 255, 0.1); /* Hover effect */
+}
+
+.nav-link.active {
+    background-color: #e89d2f; /* Highlight the active section */
+    color: #333 !important; /* Change text color when active */
+}
+
+.nav-link:active::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    animation: ripple 0.6s linear;
+}
+
+@keyframes ripple {
+    to {
+        transform: translate(-50%, -50%) scale(4);
+        opacity: 0;
+    }
+}
+
+.section {
+    padding: 0;
+    min-height: 100vh; /* Make each section occupy the full screen */
+    padding-top: 60px;
+    color: #3a4e0e; /* Text color for readability */
+    text-align: left;
+    position: relative;
+    transition: background-color 0.5s ease-in-out;
+    scroll-snap-align: start; /* Ensure the section snaps to the start of the viewport */
+}
+
+.section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Slight dark overlay */
+    z-index: 1;
+}
+
+.section .content {
+    position: relative;
+    z-index: 99; /* Ensure content is above overlay */
+    background-color: rgba(0, 0, 0, 0.6); /* Darkened squircle background */
+    padding: 20px;
+    border-radius: 20%; /* Rounded corners for squircle effect */
+    max-width: 80%;
+    margin: auto;
+    color: #fff; /* Force text color */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Add shadow to make it stand out */
+}
+
+.squircle-img-home {
+    width: 80vh;
+    height: 60vh;
+    border-radius: 20%; /* Rounded corners for squircle effect */
+    object-fit: cover;
+    margin: 20px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.squircle-img-about {
+    width: 30vh;
+    height: 40vh;
+    border-radius: 20%; /* Rounded corners for squircle effect */
+    object-fit: cover;
+    margin: 20px;
+    transition: transform 0.2s ease-in-out;
+}
+/* Floating image styles remain the same */
+.floating-squircles {
+    position: relative;
+    height: 400px;
+}
+
+.floating-squircles img {
+    position: absolute;
+    z-index: 3;
+}
+
+.floating-squircles img:nth-child(1) {
+    top: -220px;
+    left: -130px; /* Moved further left */
+}
+
+.floating-squircles img:nth-child(2) {
+    top: 15px;  /* Moved further down */
+    right: -0px; /* Moved further right */
+}
+
+.floating-squircles img:nth-child(3) {
+    bottom: -220px;  /* Moved further down */
+    left: -15px; /* Adjusted position to avoid overlap */
+}
+
+#contact {
+    background-color: #f4f4f4;
+    color: black;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .squircle-img {
+        width: 150px;
+        height: 150px;
+        margin: 10px;
+    }
+
+    .floating-squircles {
+        position: relative;
+        height: auto;
+    }
+
+    .floating-squircles img:nth-child(1) {
+        position: relative;
+        top: auto;
+        left: auto;
+        margin-bottom: 20px;
+    }
+
+    .floating-squircles img:nth-child(2) {
+        position: relative;
+        top: auto;
+        right: auto;
+        margin-bottom: 20px;
+    }
+
+    .floating-squircles img:nth-child(3) {
+        position: relative;
+        bottom: auto;
+        left: auto;
+        margin-bottom: 20px;
+    }
+
+    .section {
+        padding: 50px 20px;
+        text-align: center;
+        height: auto; /* Allow sections to resize on small screens */
+    }
+
+    .container {
+        flex-direction: column;
+    }
+
+    .col-md-6 {
+        width: 100%;
+        text-align: center;
+    }
+}
